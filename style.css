@@ -646,6 +646,10 @@ a {
   padding-top: 12px;
 }
 
+.cs2-section {
+  padding-top: 10px;
+}
+
 .cannabis-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -661,6 +665,17 @@ a {
   display: grid;
   grid-template-columns: 0.95fr 1.05fr;
   gap: 22px;
+}
+
+.cs2-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  margin-bottom: 22px;
+}
+
+.cs2-facts {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .music-player,
@@ -983,6 +998,11 @@ a {
     grid-template-columns: 1fr;
   }
 
+  .cs2-grid,
+  .cs2-facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .meme-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -1057,6 +1077,11 @@ a {
 
   .cannabis-grid,
   .cannabis-facts {
+    grid-template-columns: 1fr;
+  }
+
+  .cs2-grid,
+  .cs2-facts {
     grid-template-columns: 1fr;
   }
 
