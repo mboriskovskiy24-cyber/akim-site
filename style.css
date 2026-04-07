@@ -638,6 +638,21 @@ a {
   padding-top: 10px;
 }
 
+.cannabis-section {
+  padding-top: 8px;
+}
+
+.cannabis-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+  margin-bottom: 22px;
+}
+
+.cannabis-facts {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 .meme-intro {
   padding: 24px 26px;
   margin-bottom: 22px;
@@ -812,6 +827,11 @@ a {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .cannabis-grid,
+  .cannabis-facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .meme-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -881,6 +901,11 @@ a {
   .benefits-grid,
   .facts-grid,
   .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cannabis-grid,
+  .cannabis-facts {
     grid-template-columns: 1fr;
   }
 
