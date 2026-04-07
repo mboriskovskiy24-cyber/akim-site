@@ -7,7 +7,34 @@ const factsSection = document.querySelector("#facts");
 const memeWallSection = document.querySelector("#meme-wall");
 const memeGrid = document.getElementById("memeGrid");
 
+const siteAudio = document.getElementById("siteAudio");
+const currentTrackTitle = document.getElementById("currentTrackTitle");
+const currentTrackMeta = document.getElementById("currentTrackMeta");
+const playPauseButton = document.getElementById("playPauseButton");
+const prevTrackButton = document.getElementById("prevTrackButton");
+const nextTrackButton = document.getElementById("nextTrackButton");
+const volumeControl = document.getElementById("volumeControl");
+const trackList = document.getElementById("trackList");
+
 let toastTimer = null;
+let currentTrackIndex = 0;
+let isAudioReady = false;
+
+const playlist = [
+  { title: "щит толк", file: "./щит толк.mp3" },
+  { title: "любить!", file: "./любить!.mp3" },
+  { title: "музыка freestyle", file: "./музыка freestyle.mp3" },
+  { title: "mute", file: "./mute.mp3" },
+  { title: "TI ROMPO LE DITA", file: "./TI ROMPO LE DITA.mp3" },
+  { title: "гранде амо", file: "./гранде амо.mp3" },
+  { title: "достойный", file: "./достойный.mp3" },
+  { title: "2_5453936904833634677", file: "./2_5453936904833634677.mp3" },
+  { title: "danger", file: "./danger.mp3" },
+  { title: "для тебя", file: "./для тебя.mp3" },
+  { title: "обезвожен фит", file: "./обезвожен фит.mp3" },
+  { title: "один", file: "./один.mp3" },
+  { title: "ферари", file: "./ферари.mp3" }
+];
 
 function smoothScrollTo(targetSelector) {
   const target = document.querySelector(targetSelector);
@@ -116,6 +143,102 @@ function buildMemeCards() {
   memeGrid.append(fragment);
 }
 
+function updateTrackUI() {
+  if (!playlist.length || !currentTrackTitle || !currentTrackMeta || !trackList) {
+    return;
+  }
+
+  currentTrackTitle.textContent = playlist[currentTrackIndex].title;
+  currentTrackMeta.textContent = `Трек ${currentTrackIndex + 1} из ${playlist.length}. Нажми play и включай атмосферу.`;
+
+  const trackItems = trackList.querySelectorAll(".track-item");
+  trackItems.forEach((item, index) => {
+    item.classList.toggle("is-active", index === currentTrackIndex);
+  });
+}
+
+function loadTrack(index) {
+  if (!siteAudio || !playlist.length) {
+    return;
+  }
+
+  currentTrackIndex = (index + playlist.length) % playlist.length;
+  siteAudio.src = encodeURI(playlist[currentTrackIndex].file);
+  isAudioReady = true;
+  updateTrackUI();
+}
+
+async function playCurrentTrack() {
+  if (!siteAudio || !playlist.length) {
+    return;
+  }
+
+  if (!isAudioReady) {
+    loadTrack(currentTrackIndex);
+  }
+
+  try {
+    await siteAudio.play();
+    if (playPauseButton) {
+      playPauseButton.textContent = "Пауза";
+    }
+  } catch (error) {
+    showToast("Браузер пока не дал включить музыку. Нажми кнопку ещё раз.");
+  }
+}
+
+function pauseCurrentTrack() {
+  if (!siteAudio) {
+    return;
+  }
+
+  siteAudio.pause();
+  if (playPauseButton) {
+    playPauseButton.textContent = "Включить";
+  }
+}
+
+function buildTrackList() {
+  if (!trackList) {
+    return;
+  }
+
+  const fragment = document.createDocumentFragment();
+
+  playlist.forEach((track, index) => {
+    const item = document.createElement("button");
+    item.type = "button";
+    item.className = "track-item";
+
+    const textWrap = document.createElement("span");
+    textWrap.className = "track-item__text";
+
+    const title = document.createElement("strong");
+    title.textContent = track.title;
+
+    const meta = document.createElement("span");
+    meta.textContent = `Трек #${index + 1}`;
+
+    const action = document.createElement("span");
+    action.className = "track-item__button";
+    action.textContent = "Играть";
+
+    textWrap.append(title, meta);
+    item.append(textWrap, action);
+
+    item.addEventListener("click", async () => {
+      loadTrack(index);
+      await playCurrentTrack();
+    });
+
+    fragment.append(item);
+  });
+
+  trackList.innerHTML = "";
+  trackList.append(fragment);
+  updateTrackUI();
+}
+
 scrollButtons.forEach((button) => {
   button.addEventListener("click", () => {
     const targetSelector = button.getAttribute("data-scroll-target");
@@ -157,7 +280,59 @@ if (showMoreButton) {
   });
 }
 
+if (playPauseButton) {
+  playPauseButton.addEventListener("click", async () => {
+    if (siteAudio && !siteAudio.paused) {
+      pauseCurrentTrack();
+    } else {
+      await playCurrentTrack();
+    }
+  });
+}
+
+if (prevTrackButton) {
+  prevTrackButton.addEventListener("click", async () => {
+    loadTrack(currentTrackIndex - 1);
+    await playCurrentTrack();
+  });
+}
+
+if (nextTrackButton) {
+  nextTrackButton.addEventListener("click", async () => {
+    loadTrack(currentTrackIndex + 1);
+    await playCurrentTrack();
+  });
+}
+
+if (volumeControl && siteAudio) {
+  siteAudio.volume = Number(volumeControl.value);
+  volumeControl.addEventListener("input", () => {
+    siteAudio.volume = Number(volumeControl.value);
+  });
+}
+
+if (siteAudio) {
+  siteAudio.addEventListener("ended", async () => {
+    loadTrack(currentTrackIndex + 1);
+    await playCurrentTrack();
+  });
+
+  siteAudio.addEventListener("pause", () => {
+    if (playPauseButton) {
+      playPauseButton.textContent = "Включить";
+    }
+  });
+
+  siteAudio.addEventListener("play", () => {
+    if (playPauseButton) {
+      playPauseButton.textContent = "Пауза";
+    }
+  });
+}
+
 buildMemeCards();
+buildTrackList();
+loadTrack(0);
 
 const revealObserver = new IntersectionObserver(
   (entries, observer) => {

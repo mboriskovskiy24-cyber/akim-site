@@ -25,6 +25,7 @@
         <a class="nav__link" href="#facts">Факты</a>
         <a class="nav__link" href="#gallery">Галерея</a>
         <a class="nav__link" href="#cannabis">Конопля</a>
+        <a class="nav__link" href="#music">Музыка</a>
         <a class="nav__link" href="#meme-wall">Мемы</a>
       </nav>
     </header>
@@ -382,6 +383,44 @@
           <article class="fact-card reveal">
             <h3>Факт №3</h3>
             <p>Визуально коноплю часто узнают именно по зубчатым листьям, хотя внешний вид может различаться по сорту и стадии роста.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section music-section" id="music">
+        <div class="section-heading reveal">
+          <span class="section-heading__eyebrow">Музыка</span>
+          <h2 class="section-heading__title">Плейлист Акима прямо на сайте</h2>
+        </div>
+
+        <div class="music-layout">
+          <article class="music-player reveal">
+            <div class="music-player__top">
+              <span class="music-player__tag">Сейчас играет</span>
+              <h3 id="currentTrackTitle">щит толк</h3>
+              <p id="currentTrackMeta">Нажми кнопку воспроизведения и включи музыку прямо на странице.</p>
+            </div>
+
+            <div class="music-player__controls">
+              <button class="music-btn" type="button" id="prevTrackButton">Назад</button>
+              <button class="music-btn music-btn--primary" type="button" id="playPauseButton">Включить</button>
+              <button class="music-btn" type="button" id="nextTrackButton">Дальше</button>
+            </div>
+
+            <div class="music-player__volume">
+              <label for="volumeControl">Громкость</label>
+              <input id="volumeControl" type="range" min="0" max="1" step="0.05" value="0.85">
+            </div>
+
+            <audio id="siteAudio" preload="metadata"></audio>
+          </article>
+
+          <article class="music-playlist reveal">
+            <div class="music-playlist__head">
+              <h3>Список треков</h3>
+              <p>Нажми на любой трек, чтобы включить его.</p>
+            </div>
+            <div class="track-list" id="trackList"></div>
           </article>
         </div>
       </section>
