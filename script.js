@@ -69,7 +69,15 @@ function buildMemeCards() {
 
   const memeImageUrls = [
     "./akim-1.jpg",
-    "./akim-2.jpg"
+    "./akim-2.jpg",
+    "./akim-3.jpg",
+    "./akim-4.jpg",
+    "./akim-5.jpg",
+    "./akim-6.jpg",
+    "./akim-7.jpg",
+    "./akim-8.jpg",
+    "./akim-9.jpg",
+    "./akim-10.jpg"
   ];
 
   const fragment = document.createDocumentFragment();
