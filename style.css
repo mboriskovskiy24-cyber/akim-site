@@ -650,6 +650,10 @@ a {
   padding-top: 10px;
 }
 
+.faceit-section {
+  padding-top: 10px;
+}
+
 .cannabis-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -665,6 +669,133 @@ a {
   display: grid;
   grid-template-columns: 0.95fr 1.05fr;
   gap: 22px;
+}
+
+.faceit-card {
+  position: relative;
+  overflow: hidden;
+  padding: 30px;
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at top center, rgba(255, 59, 92, 0.18), transparent 30%),
+    linear-gradient(180deg, #171112 0%, #100c0d 100%);
+  border: 1px solid rgba(255, 75, 107, 0.22);
+  box-shadow: 0 30px 70px rgba(48, 16, 23, 0.34);
+  color: #fff;
+}
+
+.faceit-card__glow {
+  position: absolute;
+  inset: -80px auto auto 50%;
+  width: 320px;
+  height: 220px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(255, 59, 92, 0.24), transparent 70%);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.faceit-card__top,
+.faceit-card__stats {
+  position: relative;
+  z-index: 1;
+}
+
+.faceit-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.faceit-card__player h3 {
+  margin: 10px 0 0;
+  font-family: "Unbounded", sans-serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  letter-spacing: -0.03em;
+}
+
+.faceit-card__label {
+  color: rgba(255, 255, 255, 0.64);
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.faceit-rank {
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  min-width: 220px;
+}
+
+.faceit-rank__ring {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 86px;
+  height: 86px;
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at center, #1b1113 54%, transparent 55%),
+    conic-gradient(from 200deg, #ff2e55, #ff6170, #ff2e55);
+  box-shadow: 0 16px 34px rgba(255, 46, 85, 0.25);
+}
+
+.faceit-rank__ring::after {
+  content: "";
+  position: absolute;
+  inset: 9px;
+  border-radius: 999px;
+  background: #160f11;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.faceit-rank__ring span {
+  position: relative;
+  z-index: 1;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #ff526e;
+}
+
+.faceit-rank strong {
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  letter-spacing: 0.05em;
+}
+
+.faceit-rank small {
+  color: rgba(255, 255, 255, 0.64);
+  font-size: 0.92rem;
+}
+
+.faceit-card__divider {
+  height: 1px;
+  margin: 28px 0 22px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.08), rgba(255, 93, 118, 0.24), rgba(255, 255, 255, 0.08));
+}
+
+.faceit-card__stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.faceit-stat {
+  padding: 18px 16px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.faceit-stat strong {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 1.35rem;
+}
+
+.faceit-stat span {
+  color: rgba(255, 255, 255, 0.66);
+  font-size: 0.92rem;
 }
 
 .cs2-grid {
@@ -1003,6 +1134,10 @@ a {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .faceit-card__stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .meme-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -1090,6 +1225,20 @@ a {
     padding: 22px;
   }
 
+  .faceit-card {
+    padding: 24px;
+  }
+
+  .faceit-card__top,
+  .faceit-card__stats {
+    grid-template-columns: 1fr;
+  }
+
+  .faceit-card__top {
+    display: grid;
+    justify-items: start;
+  }
+
   .meme-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1143,6 +1292,10 @@ a {
 
   .music-btn {
     width: 100%;
+  }
+
+  .faceit-card__stats {
+    grid-template-columns: 1fr;
   }
 
   .meme-grid {
