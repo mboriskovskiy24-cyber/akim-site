@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Яркий одностраничный сайт про Акима с курицами, медведями и огромной мем-галереей.">
+  <title>Аким — сайт с курицами, медведями и мемами</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Unbounded:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-shell">
+    <div class="bg-orb bg-orb--sun"></div>
+    <div class="bg-orb bg-orb--peach"></div>
+    <div class="bg-orb bg-orb--mint"></div>
+    <div class="grid-glow"></div>
+
+    <header class="topbar reveal">
+      <a class="brand" href="#hero">Аким</a>
+      <nav class="nav">
+        <a class="nav__link" href="#about">О сайте</a>
+        <a class="nav__link" href="#benefits">Почему круто</a>
+        <a class="nav__link" href="#facts">Факты</a>
+        <a class="nav__link" href="#gallery">Галерея</a>
+        <a class="nav__link" href="#meme-wall">Мемы</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero section" id="hero">
+        <div class="hero__content reveal">
+          <span class="hero__eyebrow">Курино-медвежий лендинг премиум-настроения</span>
+          <h1 class="hero__title">Аким</h1>
+          <p class="hero__subtitle">
+            Лучший сайт с курицами, медведями и мемами для Акима.
+            Здесь много перьев, лап, странных шуток и визуального хаоса,
+            который почему-то выглядит очень красиво.
+          </p>
+
+          <div class="hero__actions">
+            <button class="btn btn--primary" type="button" data-scroll-target="#gallery">
+              Смотреть галерею
+            </button>
+            <button class="btn btn--secondary" type="button" id="heroMessageButton">
+              Узнать секрет Акима
+            </button>
+          </div>
+
+          <div class="hero__metrics">
+            <article class="metric-card">
+              <span class="metric-card__value">12</span>
+              <span class="metric-card__label">карточек с фото</span>
+            </article>
+            <article class="metric-card">
+              <span class="metric-card__value">520</span>
+              <span class="metric-card__label">мем-карточек</span>
+            </article>
+            <article class="metric-card">
+              <span class="metric-card__value">24/7</span>
+              <span class="metric-card__label">контент для Акима</span>
+            </article>
+          </div>
+        </div>
+
+        <div class="hero__visual reveal">
+          <div class="hero-panel hero-panel--main">
+            <div class="hero-panel__badge">Выбор Акима</div>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Chickens.JPG" alt="Группа куриц">
+            <div class="hero-panel__overlay">
+              <strong>Курицы в центре внимания</strong>
+              <span>Мягкий свет, насыщенные цвета и идеальный повод улыбнуться.</span>
+            </div>
+          </div>
+
+          <div class="hero-stack">
+            <article class="mini-card mini-card--left">
+              <img src="https://placebear.com/320/320" alt="Медведь крупным планом">
+              <div class="mini-card__text">
+                <strong>Лесной авторитет</strong>
+                <span>Когда медведь вошёл в галерею и сразу поднял уровень уважения.</span>
+              </div>
+            </article>
+
+            <article class="mini-card mini-card--right">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Hen_chicken.jpg" alt="Рыжая курица">
+              <div class="mini-card__text">
+                <strong>Уютный настрой</strong>
+                <span>Мягкий, тёплый и очень фотогеничный.</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--about" id="about">
+        <div class="section-heading reveal">
+          <span class="section-heading__eyebrow">О сайте</span>
+          <h2 class="section-heading__title">Немного про Акима и его королевство куриц, медведей и мемов</h2>
+        </div>
+
+        <div class="about-grid">
+          <article class="about-card reveal">
+            <p class="about-card__lead">
+              Этот сайт сделан так, будто дизайнер, курица, медведь и папка с мемами
+              собрались за одним столом и решили: Акиму нужен действительно незабываемый лендинг.
+            </p>
+          </article>
+
+          <article class="about-card about-card--accent reveal">
+            <p>
+              Тут всё серьёзно: крупный заголовок, аккуратные карточки, плавные анимации,
+              фотогеничные звери, странные мемные слова вроде «67», «52», «trollface»,
+              «brainrot» и «чиназес», а ещё подписи про то, что делает Аким.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="benefits">
+        <div class="section-heading reveal">
+          <span class="section-heading__eyebrow">Почему это круто</span>
+          <h2 class="section-heading__title">Четыре причины, почему этот сайт уже не остановить</h2>
+        </div>
+
+        <div class="benefits-grid">
+          <article class="feature-card reveal">
+            <span class="feature-card__index">01</span>
+            <h3>Курицы добавляют уют</h3>
+            <p>Они умеют выглядеть так, будто весь сайт создан ради идеальной прогулки по траве.</p>
+          </article>
+
+          <article class="feature-card reveal">
+            <span class="feature-card__index">02</span>
+            <h3>Медведи добавляют мощь</h3>
+            <p>Один медведь в галерее, и сразу появляется ощущение серьёзного визуального масштаба.</p>
+          </article>
+
+          <article class="feature-card reveal">
+            <span class="feature-card__index">03</span>
+            <h3>Подписи делают всё живым</h3>
+            <p>Теперь под каждой фоткой видно, что именно делает Аким, и это уже почти маленький сериал.</p>
+          </article>
+
+          <article class="feature-card reveal">
+            <span class="feature-card__index">04</span>
+            <h3>500+ мемов добивают атмосферу</h3>
+            <p>Когда обычной галереи мало, в игру вступают сотни абсурдных мем-карточек.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section--facts" id="facts">
+        <div class="section-heading reveal">
+          <span class="section-heading__eyebrow">Факты</span>
+          <h2 class="section-heading__title">Интересные и слегка шуточные наблюдения</h2>
+        </div>
+
+        <div class="facts-layout">
+          <div class="facts-cloud reveal">
+            <span class="fact-pill">Курицы любят внимание</span>
+            <span class="fact-pill">Медведи добавляют эпичность</span>
+            <span class="fact-pill">67 звучит как мем</span>
+            <span class="fact-pill">brainrot — это уже стиль</span>
+            <span class="fact-pill">чиназес выглядит загадочно</span>
+            <span class="fact-pill">Аким заслуживает красивый сайт</span>
+          </div>
+
+          <div class="facts-grid">
+            <article class="fact-card reveal">
+              <h3>Факт №1</h3>
+              <p>Если на сайте есть курицы, он становится теплее. Если есть ещё и медведи, он становится легендарнее.</p>
+            </article>
+
+            <article class="fact-card reveal">
+              <h3>Факт №2</h3>
+              <p>Большой заголовок «Аким» и подписи про его действия превращают обычную галерею в мини-приключение.</p>
+            </article>
+
+            <article class="fact-card reveal">
+              <h3>Факт №3</h3>
+              <p>Сотни мем-карточек делают страницу настолько странной, что она автоматически становится запоминающейся.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="gallery">
+        <div class="section-heading reveal">
+          <span class="section-heading__eyebrow">Галерея</span>
+          <h2 class="section-heading__title">Большая подборка куриц и медведей для Акима</h2>
+        </div>
+
+        <div class="gallery-grid">
+          <article class="gallery-card reveal">
+            <img class="gallery-card__image" src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Chickens.JPG" alt="Стая куриц на траве" loading="lazy">
+            <div class="gallery-card__content">
+              <h3>Солнечная компания</h3>
+              <p>Куриный коллектив, который явно знает толк в красивых прогулках и уверенной походке.</p>
+              <div class="gallery-card__akim">Аким делает важный вид и считает, что эта команда явно пришла по его душу.</div>
+            </div>
+          </article>
+
+          <article class="gallery-card reveal">
+            <img class="gallery-card__image" src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Hen_chicken.jpg" alt="Рыжая курица крупным планом" loading="lazy">
+            <div class="gallery-card__content">
+              <h3>Рыжая звезда</h3>
+              <p>Взгляд уверенный, перья сияют, настроение такое, будто камера принадлежит именно ей.</p>
+              <div class="gallery-card__akim">Аким делает вид, что это обычный день, хотя уже мысленно ставит лайк этой курице.</div>
+            </div>
+          </article>
+
+          <article class="gallery-card reveal">
+            <img class="gallery-card__image" src="https://upload.wikimedia.org/wikipedia/commons/6/62/A_rooster.jpg" alt="Красочный петух" loading="lazy">
+            <div class="gallery-card__content">
+              <h3>Господин Петух</h3>
+              <p>Настоящий подиумный выход: цвет, осанка и ощущение, что день начался очень эффектно.</p>
+              <div class="gallery-card__akim">Аким делает серьёзное лицо и уважительно признаёт мощь этого петушиного стиля.</div>
+            </div>
+          </article>
+
+          <article class="gallery-card reveal">
+            <img class="gallery-card__image" src="https://placebear.com/800/620" alt="Большой бурый медведь" loading="lazy">
+            <div class="gallery-card__content">
+              <h3>Медведь на паузе</h3>
+              <p>Спокойный, большой и уверенный в себе герой кадра, который идеально балансирует куриный вайб.</p>
+              <div class="gallery-card__akim">Аким делает шаг назад и одновременно восхищается тем, насколько медведь фотогеничен.</div>
+            </div>
+          </article>
+
+          <article class="gallery-card reveal">
+            <img class="gallery-card__image" src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Chickens%2C.jpg" alt="Курицы на ферме" loading="lazy">
+            <div class="gallery-card__content">
+              <h3>Фермерский вайб</h3>
+              <p>Классическая атмосфера, в которой каждая курица выглядит как эксперт по уюту и солнцу.</p>
+              <div class="gallery-card__akim">Аким делает вид, что приехал по делам, но на самом деле просто любуется пернатыми.</div>
+            </div>
+          </article>
+
+          <article class="gallery-card reveal">
+            <img class="gallery-card__image" src="https://placebear.com/801/620" alt="Медведь крупным планом" loading="lazy">
+            <div class="gallery-card__content">
+              <h3>Хозяин лесного кадра</h3>
+              <p>Медведь смотрит так, будто давно понял, что сегодня вся эта страница работает на его харизму.</p>
+              <div class="gallery-card__akim">Аким делает глубокий вдох и решает, что спорить с таким авторитетом не стоит.</div>
+            </div>
+          </article>
+
+          <article class="gallery-card reveal">
+            <img class="gallery-card__image" src="https://upload.wikimedia.org/wikipedia/commons/1/1e/Rooster_-_Public_Domain.jpg" alt="Петух на природе" loading="lazy">
+            <div class="gallery-card__content">
+              <h3>Утренний солист</h3>
+              <p>Птица с харизмой главного вокалиста двора и абсолютной уверенностью в своём образе.</p>
+              <div class="gallery-card__akim">Аким делает вид, что не слышит этот внутренний концерт, но ритм уже поймал.</div>
+            </div>
+          </article>
+
+          <article class="gallery-card reveal">
+            <img class="gallery-card__image" src="https://placebear.com/802/620" alt="Медведь в профиль" loading="lazy">
+            <div class="gallery-card__content">
+              <h3>Лесной стратег</h3>
+              <p>Глубокий взгляд, мощный силуэт и ощущение, что этот медведь знает все короткие дороги в тайгу.</p>
+              <div class="gallery-card__akim">Аким делает вид, что тоже всё просчитал, хотя просто впечатлён этим профилем.</div>
+            </div>
+          </article>
+
+          <article class="gallery-card reveal">
+            <img class="gallery-card__image" src="https://upload.wikimedia.org/wikipedia/commons/4/46/Hen_%2826530113000%29.jpg" alt="Курица в мягком свете" loading="lazy">
+            <div class="gallery-card__content">
+              <h3>Тихая эстетика</h3>
+              <p>Спокойный кадр, в котором курица выглядит как героиня уютной деревенской открытки.</p>
+              <div class="gallery-card__akim">Аким делает спокойное лицо и внезапно начинает ценить нежную деревенскую эстетику.</div>
+            </div>
+          </article>
+
+          <article class="gallery-card reveal">
+            <img class="gallery-card__image" src="https://placebear.com/803/620" alt="Медведь на светлом фоне" loading="lazy">
+            <div class="gallery-card__content">
+              <h3>Добрый гигант</h3>
+              <p>Большой медведь, который выглядит так, будто пришёл проверить, достаточно ли тут красоты для Акима.</p>
+              <div class="gallery-card__akim">Аким делает уважительный кивок и считает проверку успешно пройденной.</div>
+            </div>
+          </article>
+
+          <article class="gallery-card reveal">
+            <img class="gallery-card__image" src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Chicken_and_her_chickens.jpg" alt="Курица с цыплятами" loading="lazy">
+            <div class="gallery-card__content">
+              <h3>Семейный кадр</h3>
+              <p>Максимум тепла, заботы и того самого ощущения, когда у снимка есть настоящее настроение.</p>
+              <div class="gallery-card__akim">Аким делает самый мягкий взгляд дня и сразу становится чуть добрее.</div>
+            </div>
+          </article>
+
+          <article class="gallery-card reveal">
+            <img class="gallery-card__image" src="https://upload.wikimedia.org/wikipedia/commons/7/73/Chickens_%2830233295083%29.jpg" alt="Курицы в зелени" loading="lazy">
+            <div class="gallery-card__content">
+              <h3>Зелёный простор</h3>
+              <p>Курицы среди травы напоминают, что хороший сайт должен быть живым, ярким и немного весёлым.</p>
+              <div class="gallery-card__akim">Аким делает вид, что просто смотрит на фото, хотя уже хочет ещё одну галерею.</div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section meme-section" id="meme-wall">
+        <div class="section-heading reveal">
+          <span class="section-heading__eyebrow">Мем-стена</span>
+          <h2 class="section-heading__title">500+ дополнительных мем-картинок для Акима</h2>
+        </div>
+
+        <div class="meme-intro reveal">
+          <p>
+            Ниже начинается большая мемная зона. Тут будут сотни карточек с подписями
+            в духе <strong>67</strong>, <strong>trollface</strong>, <strong>brainrot</strong>,
+            <strong>52</strong> и <strong>чиназес</strong>. Всё это генерируется автоматически,
+            чтобы страница выглядела как огромная интернет-подборка для Акима.
+          </p>
+        </div>
+
+        <div class="meme-grid" id="memeGrid"></div>
+      </section>
+
+      <section class="section cta-section">
+        <div class="cta-card reveal">
+          <span class="cta-card__eyebrow">Ещё немного магии</span>
+          <h2>Если хочется ещё мемов, куриц и медведей, кнопка уже готова</h2>
+          <p>
+            Нажми, чтобы снова попасть в мем-стену и получить персональное сообщение
+            для Акима от самого странного и красивого интернета.
+          </p>
+          <button class="btn btn--primary btn--wide" type="button" id="showMoreButton">
+            Показать ещё мемов
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer reveal">
+      <p>Сайт создан для Акима с любовью, курицами, медведями и мемами.</p>
+    </footer>
+
+    <div class="toast" id="toast" aria-live="polite" aria-atomic="true"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
