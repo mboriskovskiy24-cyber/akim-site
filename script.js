@@ -6,6 +6,7 @@ const gallerySection = document.querySelector("#gallery");
 const factsSection = document.querySelector("#facts");
 const memeWallSection = document.querySelector("#meme-wall");
 const memeGrid = document.getElementById("memeGrid");
+const faceitEloCounter = document.getElementById("faceitEloCounter");
 
 const siteAudio = document.getElementById("siteAudio");
 const currentTrackTitle = document.getElementById("currentTrackTitle");
@@ -19,6 +20,7 @@ const trackList = document.getElementById("trackList");
 let toastTimer = null;
 let currentTrackIndex = 0;
 let isAudioReady = false;
+let faceitCounterStarted = false;
 
 const playlist = [
   { title: "щит толк", file: "./щит толк.mp3" },
@@ -61,6 +63,37 @@ function showToast(message) {
   toastTimer = window.setTimeout(() => {
     toast.classList.remove("toast--visible");
   }, 3200);
+}
+
+function animateFaceitCounter() {
+  if (!faceitEloCounter || faceitCounterStarted) {
+    return;
+  }
+
+  faceitCounterStarted = true;
+
+  const target = Number(faceitEloCounter.dataset.target || "0");
+  const duration = 1400;
+  const startTime = performance.now();
+
+  function formatNumber(value) {
+    return value.toLocaleString("ru-RU");
+  }
+
+  function tick(currentTime) {
+    const elapsed = currentTime - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const currentValue = Math.round(target * eased);
+
+    faceitEloCounter.textContent = formatNumber(currentValue);
+
+    if (progress < 1) {
+      requestAnimationFrame(tick);
+    }
+  }
+
+  requestAnimationFrame(tick);
 }
 
 function buildMemeCards() {
@@ -339,6 +372,11 @@ const revealObserver = new IntersectionObserver(
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add("is-visible");
+
+        if (faceitEloCounter && entry.target.contains(faceitEloCounter)) {
+          animateFaceitCounter();
+        }
+
         observer.unobserve(entry.target);
       }
     });
